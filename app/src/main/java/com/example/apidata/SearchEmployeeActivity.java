@@ -20,8 +20,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class SearchEmployeeActivity extends AppCompatActivity {
 
-    private final static String BASE_URL = "http://dummy.restapiexample.com/api/v1";
-    private EditText etEmpNo;
+    private final static String BASE_URL = "http://dummy.restapiexample.com/api/v1/";
+    private EditText etEmpID;
     private TextView tvData;
     private Button btnSearch;
 
@@ -31,14 +31,14 @@ public class SearchEmployeeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_employee);
 
-        etEmpNo = findViewById(R.id.etEmpID);
+        etEmpID = findViewById(R.id.etEmpID);
         tvData = findViewById(R.id.tvData);
         btnSearch = findViewById(R.id.btnSearch);
 
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Validate()) {
+                 {
                     loadData();
                 }
             }
@@ -46,29 +46,32 @@ public class SearchEmployeeActivity extends AppCompatActivity {
 
     }
         private void loadData(){
-            Retrofit retrofit = new Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create()).build();
+            Retrofit retrofit = new Retrofit.Builder()
+                    .baseUrl(BASE_URL)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
 
             API api = retrofit.create(API.class);
 
-            Call<Employee> listCall = api.getEmployeeByID(Integer.parseInt(etEmpNo.getText().toString()));
+            Call<Employee> listCall = api.getEmployeeByID(Integer.parseInt(etEmpID.getText().toString()));
 
             listCall.enqueue(new Callback<Employee>() {
                 @Override
                 public void onResponse(Call<Employee> call, Response<Employee> response) {
-                    Toast.makeText(SearchEmployeeActivity.this, response.body().toString(),Toast.LENGTH_LONG).show();
+
                     String content = "";
                     content += "ID : " + response.body().getId() + "\n";
-                    content += "employee_name : " + response.body().getEmployee_name() + "\n";
-                    content += "employee_salary : " + response.body().getEmployee_salary() + "\n";
-                    content += "employee_age : " + response.body().getEmployee_age() + "\n";
-                    content += "profile_image : " + response.body().getProfile_image() + "\n";
+                    content += "Name : " + response.body().getEmployee_name() + "\n";
+                    content += "Age : " + response.body().getEmployee_age() + "\n";
+                    content += "Salary : " + response.body().getEmployee_salary() + "\n";
+
 
                     tvData.append(content);
                 }
 
                 @Override
                 public void onFailure(Call<Employee> call, Throwable t) {
-                    Toast.makeText(SearchEmployeeActivity.this, "Error", Toast.LENGTH_LONG).show();
+                    Toast.makeText(SearchEmployeeActivity.this, "Error"  + t.getLocalizedMessage(),  Toast.LENGTH_LONG).show();
 
                 }
             });
