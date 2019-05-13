@@ -8,16 +8,16 @@
     tools:context=".MainActivity">
 
 
-    <ScrollView
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/tvData"
+            android:layout_marginLeft="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
         </TextView>
-    </ScrollView>
+    </android.support.v4.widget.NestedScrollView>
 
 </LinearLayout>

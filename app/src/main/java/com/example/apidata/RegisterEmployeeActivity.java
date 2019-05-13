@@ -28,6 +28,8 @@ public class RegisterEmployeeActivity extends AppCompatActivity {
 
         etName = findViewById(R.id.etName);
         etSalary = findViewById(R.id.etSalary);
+        etEmpAge = findViewById(R.id.etEmpAge);
+
         btnRegister = findViewById(R.id.btnRegister);
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
@@ -42,7 +44,7 @@ public class RegisterEmployeeActivity extends AppCompatActivity {
         Float salary = Float.parseFloat(etSalary.getText().toString());
         int age = Integer.parseInt(etEmpAge.getText().toString());
 
-        EmployeeCUD employee = new EmployeeCUD(name , salary, age);
+        EmployeeCUD employee = new EmployeeCUD(name, salary, age);
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)

@@ -25,7 +25,6 @@ public class SearchEmployeeActivity extends AppCompatActivity {
     private TextView tvData;
     private Button btnSearch;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +42,6 @@ public class SearchEmployeeActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
         private void loadData(){
             Retrofit retrofit = new Retrofit.Builder()
@@ -65,17 +63,13 @@ public class SearchEmployeeActivity extends AppCompatActivity {
                     content += "Age : " + response.body().getEmployee_age() + "\n";
                     content += "Salary : " + response.body().getEmployee_salary() + "\n";
 
-
                     tvData.append(content);
                 }
 
                 @Override
                 public void onFailure(Call<Employee> call, Throwable t) {
                     Toast.makeText(SearchEmployeeActivity.this, "Error"  + t.getLocalizedMessage(),  Toast.LENGTH_LONG).show();
-
                 }
             });
         }
-
     }
-
