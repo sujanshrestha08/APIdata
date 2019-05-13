@@ -23,7 +23,10 @@ public class MainActivity extends AppCompatActivity {
 
         tvData = findViewById(R.id.tvData);
 
-        Retrofit retrofit = new Retrofit.Builder().baseUrl("http://dummy.restapiexample.com/api/v1/").addConverterFactory(GsonConverterFactory.create()).build();
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://dummy.restapiexample.com/api/v1/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
 
         API api = retrofit.create(API.class);
 
@@ -46,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
                     content += "employee_salary : " + employee.getEmployee_salary() + "\n";
                     content += "employee_age : " + employee.getEmployee_age() + "\n";
                     content += "profile_image : " + employee.getProfile_image() + "\n";
+                    content += "----------------------------------------------------------" + "\n" ;
 
                     tvData.append(content);
                 }

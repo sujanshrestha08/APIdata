@@ -12,16 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".UpdateDeleteActivity"></activity>
-        <activity android:name=".RegisterEmployeeActivity" />
-        <activity android:name=".SearchEmployeeActivity">
+        <activity android:name=".DashboardActivity" android:label="DashBoard">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".UpdateDeleteActivity" android:label="Update/Delete Employee"></activity>
+        <activity android:name=".RegisterEmployeeActivity" android:label="Register Employee"/>
+        <activity android:name=".SearchEmployeeActivity" android:label="Search Employee"></activity>
+        <activity android:name=".MainActivity" android:label="Display All Employee"/>
     </application>
 
 </manifest>

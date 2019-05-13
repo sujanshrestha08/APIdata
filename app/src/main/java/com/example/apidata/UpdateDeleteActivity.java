@@ -1,5 +1,7 @@
 package com.example.apidata;
 
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,6 +23,7 @@ public class UpdateDeleteActivity extends AppCompatActivity {
     private final static String BASE_URL = "http://dummy.restapiexample.com/api/v1/";
     private EditText etEmpNo, etEmpName, etEmpSalary, etEmpAge;
     private Button btnSearch, btnUpdate, btnDelete;
+    AlertDialog.Builder builder;
     Retrofit retrofit;
     API api;
 
@@ -37,6 +40,7 @@ public class UpdateDeleteActivity extends AppCompatActivity {
         btnSearch = findViewById(R.id.btnSearch);
         btnUpdate = findViewById(R.id.btnUpdate);
         btnDelete = findViewById(R.id.btnDelete);
+        builder = new AlertDialog.Builder(this);
 
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,6 +60,27 @@ public class UpdateDeleteActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 deleteEmployee();
+
+                builder.setMessage("Are you sure you want to Delete ?!!!")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                        Toast.makeText(getApplicationContext(), "Successfully Deleted", Toast.LENGTH_LONG).show();
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                        Toast.makeText(getApplicationContext(), "Canceled", Toast.LENGTH_LONG).show();
+                    }
+                });
+
+                AlertDialog alert = builder.create();
+                alert.setTitle("Alert");
+                alert.show();
             }
         });
     }
