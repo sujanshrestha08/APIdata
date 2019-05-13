@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#EFE2BA"
     tools:context=".UpdateDeleteActivity">
 
     <EditText
@@ -20,6 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
+        android:background="#AFD275"
         android:text="SEARCH"
         />
 
@@ -51,15 +53,15 @@
         android:id="@+id/btnUpdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#AFD275"
         android:text="UPDATE"/>
 
     <Button
         android:layout_margin="20dp"
         android:id="@+id/btnDelete"
+        android:background="#AFD275"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="DELETE"/>
-
-
 
 </LinearLayout>

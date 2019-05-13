@@ -29,7 +29,6 @@ public class RegisterEmployeeActivity extends AppCompatActivity {
         etName = findViewById(R.id.etName);
         etSalary = findViewById(R.id.etSalary);
         etEmpAge = findViewById(R.id.etEmpAge);
-
         btnRegister = findViewById(R.id.btnRegister);
 
         btnRegister.setOnClickListener(new View.OnClickListener() {

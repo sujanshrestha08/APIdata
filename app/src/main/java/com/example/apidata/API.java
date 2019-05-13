@@ -16,11 +16,11 @@ public interface API{
     @GET("employees")
     Call<List<Employee>> getEmployee();
 
-    @GET("employee/{empID}")
-    Call<Employee> getEmployeeByID(@Path("empID") int empID);
-
     @POST("create")
     Call<Void> registerEmployee(@Body EmployeeCUD emp);
+
+    @GET("employee/{empID}")
+    Call<Employee> getEmployeeByID(@Path("empID") int empID);
 
     @PUT("update/{empID}")
     Call<Void> updateEmployee(@Path("empID") int empID, @Body EmployeeCUD emp);

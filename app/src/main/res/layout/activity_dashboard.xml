@@ -5,38 +5,57 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#85D"
     tools:context=".DashboardActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select what you want?"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:padding="25dp"
+        android:textColor="#ffffff"
+        />
 
     <Button
         android:id="@+id/btnAllEmp"
         android:textSize="20dp"
+        android:background="#5D5C61"
+        android:textColor="#ffffff"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="40dp"
+        android:layout_margin="50dp"
         android:text="SHOW ALL EMPLOYEE"/>
 
     <Button
         android:id="@+id/btnRegister"
         android:textSize="20dp"
+        android:background="#5D5C61"
+        android:textColor="#ffffff"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="40dp"
+        android:layout_margin="50dp"
         android:text="REGISTER EMPLOYEE"/>
 
     <Button
         android:id="@+id/btnSearch"
         android:textSize="20dp"
+        android:background="#5D5C61"
+        android:textColor="#ffffff"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="40dp"
+        android:layout_margin="50dp"
         android:text="SEARCH EMPLOYEE"/>
 
     <Button
         android:id="@+id/btnUpdateDelete"
         android:textSize="20dp"
+        android:background="#5D5C61"
+        android:textColor="#ffffff"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="40dp"
+        android:layout_margin="30dp"
         android:text="UPDATE/DELETE EMPLOYEE"/>
 
 </LinearLayout>
