@@ -23,9 +23,9 @@ public class UpdateDeleteActivity extends AppCompatActivity {
     private final static String BASE_URL = "http://dummy.restapiexample.com/api/v1/";
     private EditText etEmpNo, etEmpName, etEmpSalary, etEmpAge;
     private Button btnSearch, btnUpdate, btnDelete;
-    AlertDialog.Builder builder;
     Retrofit retrofit;
     API api;
+    AlertDialog.Builder builder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<List<Employee>> call, Response<List<Employee>> response) {
 
                 if (!response.isSuccessful()) {
-                    tvData.append("Code: " + response.code());
+                    tvData.append("Code : " + response.code());
                     return;
                 }
 
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                     content += "employee_salary : " + employee.getEmployee_salary() + "\n";
                     content += "employee_age : " + employee.getEmployee_age() + "\n";
                     content += "profile_image : " + employee.getProfile_image() + "\n";
-                    content += "----------------------------------------------------------" + "\n" ;
+                    content += "---*---*---*---*---*---*---*---*---*--- " + "\n";
 
                     tvData.append(content);
                 }
@@ -58,10 +58,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<Employee>> call, Throwable t) {
-                tvData.append("Error " + t.getMessage());
+                tvData.setText("Error " + t.getMessage());
             }
         });
-
     }
-
 }

@@ -5,13 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#ADADAD"
     tools:context=".SearchEmployeeActivity">
 
     <EditText
         android:id="@+id/etEmpID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="#ffffff"
+        android:layout_marginRight="20dp"
         android:hint="Enter employee No"/>
 
     <Button
@@ -29,6 +33,7 @@
         <TextView
             android:id="@+id/tvData"
             android:textSize="30sp"
+            android:textColor="#ffffff"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
